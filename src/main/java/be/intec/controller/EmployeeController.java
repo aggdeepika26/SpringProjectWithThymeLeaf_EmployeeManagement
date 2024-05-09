@@ -57,12 +57,14 @@ public class EmployeeController {
 
 
   @GetMapping("/showFormForUpdate")
-    public ModelAndView showUpdateForm(@RequestParam Long id)
+   public ModelAndView showFormForUpdate(@RequestParam Long id)
+
     {
-        ModelAndView mav = new ModelAndView("new_employee");
+        ModelAndView mav = new ModelAndView("update_employee");
         Employee employee = employeeService.getEmployeeById(id);
         mav.addObject("employee",employee);
         return mav;
+
     }
 
 
